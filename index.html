@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="《嫁金钗》角色人格测试：20题，测你在被冒犯、被低估、被逼到墙角时，更接近剧中哪一位角色的生存策略。">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#7a1f2b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%9A%3C/text%3E%3C/svg%3E">
+<title>《嫁金钗》角色人格测试 · 你是剧中谁</title>
+<style>
+  :root{
+    --bg:#f7f4f2; --card:#fff; --ink:#241a18; --muted:#7a6a66;
+    --line:#e8e0dc; --brand:#7a1f2b; --brand2:#b8863b;
+    --warn:#b54708; --danger:#b42318; --soft:#f6eceb; --good:#3d6b4f;
+    --gold:#b8863b; --goldsoft:#faf3e6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.65}
+  .wrap{max-width:980px;margin:0 auto;padding:24px 16px 80px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 30px rgba(36,26,24,.05);margin-bottom:18px}
+  h1{font-size:28px;line-height:1.3;margin:0 0 10px}
+  h2{font-size:22px;margin:0 0 12px}
+  h3{font-size:17px;margin:20px 0 10px}
+  p{margin:8px 0}
+  .muted{color:var(--muted);font-size:14px}
+  .tag{display:inline-block;background:var(--soft);color:var(--brand);border-radius:999px;padding:3px 10px;font-size:12px;margin:2px 4px 2px 0}
+  .tag.gold{background:var(--goldsoft);color:var(--gold)}
+  .btn{display:inline-block;border:0;border-radius:12px;padding:12px 20px;font-size:16px;font-weight:700;cursor:pointer;background:var(--brand);color:#fff;margin:8px 8px 0 0}
+  .btn.secondary{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+  .btn.ghost{background:#efe9e6;color:var(--ink)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .progress{height:10px;background:#ece3df;border-radius:999px;overflow:hidden;margin:12px 0}
+  .progress > div{height:100%;background:linear-gradient(90deg,var(--brand),var(--brand2));width:0;transition:width .25s}
+  .q{border-top:1px solid var(--line);padding:18px 0 6px}
+  .q:first-of-type{border-top:0}
+  .qtitle{font-weight:700;margin-bottom:10px}
+  .qno{color:var(--brand);margin-right:6px}
+  .opts{display:grid;gap:8px}
+  .opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;background:#fdfbfa}
+  .opt:hover{border-color:#d9b8b0;background:#fdf7f5}
+  .opt input{margin-top:4px}
+  .scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  .scale .opt{justify-content:center;text-align:center;font-size:13px;padding:10px 6px}
+  .scale .opt input{display:none}
+  .scale .opt.sel{border-color:var(--brand);background:var(--soft);color:var(--brand);font-weight:700}
+  .error{color:var(--danger);font-size:14px;margin-top:8px}
+  .hidden{display:none}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  @media(max-width:720px){.scale{grid-template-columns:1fr}.wrap{padding:14px 10px 60px}.card{padding:18px}}
+  .metric{margin:10px 0}
+  .metricTop{display:flex;justify-content:space-between;gap:10px;font-size:14px}
+  .bar{height:9px;background:#ece3df;border-radius:999px;overflow:hidden;margin-top:6px}
+  .bar > div{height:100%;background:var(--brand);border-radius:999px}
+  .bar.gold > div{background:var(--gold)}
+  .callout{border-left:4px solid var(--brand);background:#fbf6f5;padding:12px 14px;border-radius:10px;margin:12px 0}
+  .callout.warn{border-left-color:var(--warn);background:#fff8f0}
+  .callout.good{border-left-color:var(--good);background:#f2f8f4}
+  .callout.gold{border-left-color:var(--gold);background:var(--goldsoft)}
+  .list li{margin:6px 0}
+  .consent{display:flex;gap:10px;align-items:flex-start;background:#fdfbfa;border:1px solid var(--line);border-radius:12px;padding:12px}
+  .printOnly{display:none}
+  .restoreBanner{background:#fff8e6;border:1px solid #f0d58c;border-radius:12px;padding:12px 14px;margin:0 0 14px;display:flex;gap:12px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+  .restoreBanner .small{color:#8a5a00}
+  .autosaveHint{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);margin:8px 0 0;flex-wrap:wrap}
+  .autosaveHint .dot{width:8px;height:8px;border-radius:50%;background:var(--good);display:inline-block;flex:0 0 auto}
+  .autosaveHint.offline .dot{background:var(--muted)}
+  .autosaveHint button{margin-left:auto}
+  .policy{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fdfbfa}
+  .policy summary{cursor:pointer;font-weight:700;color:var(--brand);font-size:15px}
+  .policyBody{margin-top:10px;font-size:14px;color:#4a3f3c}
+  .policyBody h3{font-size:15px;margin:12px 0 6px;color:var(--ink)}
+  .placeholder{color:#b54708;background:#fff8f0;padding:2px 6px;border-radius:6px;font-size:13px}
+  .hero{background:linear-gradient(135deg,#f6eceb 0%,#f7f4f2 50%,#faf3e6 100%);border-radius:18px;padding:22px;margin:14px 0;border:1px solid var(--line)}
+  .heroName{font-size:34px;font-weight:800;margin:4px 0 2px;color:var(--brand)}
+  .heroTag{font-size:16px;color:#4a3f3c;font-weight:600}
+  .scorePill{display:inline-block;background:#fff;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:4px 14px;font-weight:800;font-size:15px;margin-left:8px}
+  .quote{border-left:4px solid var(--gold);background:var(--goldsoft);padding:14px 16px;border-radius:10px;margin:14px 0;font-size:15px}
+  .twoCol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.twoCol{grid-template-columns:1fr}}
+  .miniCard{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fdfbfa}
+  .miniCard h4{margin:0 0 8px;font-size:16px}
+  .advice{counter-reset:adv;list-style:none;padding-left:0}
+  .advice li{counter-increment:adv;position:relative;padding:10px 12px 10px 44px;border:1px solid var(--line);border-radius:12px;background:#fff;margin:10px 0}
+  .advice li::before{content:counter(adv);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--brand);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  @media print{
+    body{background:#fff}
+    .wrap{max-width:none;padding:0}
+    .card{box-shadow:none;border:0;padding:10px 0;page-break-inside:avoid}
+    .noPrint{display:none!important}
+    .printOnly{display:block}
+    .bar,.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section id="intro" class="card">
+    <span class="tag">《嫁金钗》角色人格测试</span>
+    <span class="tag">20 题 · 约 5 分钟</span>
+    <span class="tag gold">本地计算 · 自动保存</span>
+    <h1>你是《嫁金钗》里的谁？</h1>
+    <p class="muted">不测你是“好人”还是“坏人”。测的是：当你被冒犯、被低估、被逼到墙角时，你更接近哪一种生存本能。</p>
+
+    <div class="callout">
+      <strong>你会得到：</strong>
+      <ul class="list">
+        <li>最接近你的角色类型（从 8 位核心角色中匹配）；</li>
+        <li>五维对照：你的得分 vs 该角色的典型状态；</li>
+        <li>这份生存策略在现实中的优势，以及你可能付出的代价；</li>
+        <li>3 条可执行的建议 + 一句“角色台词式”自我提醒；</li>
+        <li>你最需要警惕的角色类型，以及为什么。</li>
+      </ul>
+    </div>
+
+    <div class="callout warn">
+      <strong>重要说明：</strong>
+      <ul class="list">
+        <li>本测试为剧迷向自我探索工具，<strong>非官方测试</strong>，与剧方及演员无关联；</li>
+        <li>结果基于剧中角色的公开设定与行为逻辑做人格维度抽象，<strong>不是对角色“善恶”的最终评判</strong>；</li>
+        <li>不构成心理诊断或医疗建议；</li>
+        <li>答案仅保存在你本机浏览器，不主动上传服务器。</li>
+      </ul>
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" id="consent">
+      <span>我已阅读并同意：本测试为剧迷向自评工具，结果仅供自我探索与娱乐参考，不替代专业心理咨询或医疗诊断。我理解答案保存在本机浏览器，不上传服务器。</span>
+    </label>
+    <div class="error hidden" id="consentError">请先勾选知情同意。</div>
+    <button class="btn" id="startBtn">开始测试</button>
+
+    <details class="policy">
+      <summary>隐私与使用说明（Sage Studio工作室原创设计，盗版、转载等一经发现追究责任。您的测评内容不会上传服务器，没有泄露隐私的风险，请放心作答。）</summary>
+      <div class="policyBody">
+        <h3>数据说明</h3>
+        <p>当前版本：答案与进度仅保存在你的本机浏览器 localStorage，不主动上传服务器。点击【重新测试/清除进度】可删除本机记录。更换浏览器、无痕模式或清除浏览器数据后记录会丢失。</p>
+        <h3>使用边界</h3>
+        <p>本测试不用于任何形式的人格定性或道德评判。角色类型仅为便于理解而做的抽象标签，不代表对虚构人物的最终评价。</p>
+        <h3>版权说明</h3>
+        <p>剧名与角色名仅用于说明测试的灵感来源，本页面为非官方衍生内容。</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="test" class="card hidden">
+    <div id="restoreNotice" class="restoreBanner hidden"></div>
+    <div class="row" style="justify-content:space-between">
+      <div>
+        <span class="tag" id="stepTag">第 1 部分</span>
+        <h2 id="moduleTitle" style="margin-top:8px">被冒犯时</h2>
+      </div>
+      <div class="muted" id="progressText">0 / 20</div>
+    </div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <p class="muted" id="moduleHint"></p>
+    <div class="autosaveHint" id="autosaveHint">
+      <span class="dot"></span>
+      <span id="autosaveText">进度已自动保存在本浏览器</span>
+      <button type="button" class="btn ghost" style="padding:4px 10px;font-size:12px" onclick="restart()">清除进度</button>
+    </div>
+    <form id="questionForm"></form>
+    <div class="error hidden" id="formError">请完成本页所有必答题后再继续。</div>
+    <div class="row" style="justify-content:space-between;margin-top:18px">
+      <button class="btn ghost noPrint" id="prevBtn" type="button">上一步</button>
+      <div>
+        <button class="btn secondary noPrint" id="nextBtn" type="button">下一步</button>
+        <button class="btn hidden" id="submitBtn" type="button">生成我的角色报告</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="report" class="hidden"></section>
+
+</div>
+
+<script>
+/* =========================================================
+   《嫁金钗》角色人格测试 · 20 题 · 5 维 · 8 角色 · 本地计分
+   ========================================================= */
+
+const STORAGE_KEY = 'jiajinchai_match_v1';
+const STORAGE_VERSION = 1;
+
+const MODULES = [
+  {key:'M1', title:'被冒犯时', hint:'请回想你在关系、职场或家庭中被冒犯、被低估时的真实反应。'},
+  {key:'M2', title:'出手的尺度', hint:'想想你一旦决定回应，通常会做到什么程度。'},
+  {key:'M3', title:'走一步，看几步', hint:'这部分关于你做判断和布局的习惯。'},
+  {key:'M4', title:'心软的范围', hint:'你在为谁心软、为谁破例这件事上，通常怎么选。'},
+  {key:'M5', title:'体面与里子', hint:'最后一组，关于外界的看法和“该有的样子”对你有多重要。'}
+];
+
+const SCALE_LABELS = ['完全不像我','比较不像','说不好','比较像我','非常像我'];
+
+const QUESTIONS = [
+  {id:'Q1', m:'M1', dim:'隐忍', reverse:false, t:'被人当众轻视时，我会先记住，不急着当场翻脸。'},
+  {id:'Q2', m:'M1', dim:'隐忍', reverse:true,  t:'被冒犯的那一刻，我很难忍住不回击。'},
+  {id:'Q3', m:'M1', dim:'隐忍', reverse:false, t:'我习惯把情绪收起来，等合适的时机再处理。'},
+  {id:'Q4', m:'M1', dim:'隐忍', reverse:true,  t:'如果对方踩到我的底线，我会立刻让对方知道。'},
+
+  {id:'Q5', m:'M2', dim:'反击', reverse:false, t:'一旦决定反击，我会做到让对方不敢再有下一次。'},
+  {id:'Q6', m:'M2', dim:'反击', reverse:true,  t:'我通常只求解决问题，不想把事情闹大。'},
+  {id:'Q7', m:'M2', dim:'反击', reverse:false, t:'别人怎么对我，我就怎么还回去，哪怕看起来“不够体面”。'},
+  {id:'Q8', m:'M2', dim:'反击', reverse:true,  t:'即使占了上风，我也会给对方留一步退路。'},
+
+  {id:'Q9',  m:'M3', dim:'谋略', reverse:false, t:'做重要决定前，我会提前想好后面三步。'},
+  {id:'Q10', m:'M3', dim:'谋略', reverse:true,  t:'我更喜欢走一步看一步，计划太远反而让我不自在。'},
+  {id:'Q11', m:'M3', dim:'谋略', reverse:false, t:'我擅长观察局势，等别人先动，再决定自己怎么走。'},
+  {id:'Q12', m:'M3', dim:'谋略', reverse:true,  t:'比起算计，我更相信直觉和当下的判断。'},
+
+  {id:'Q13', m:'M4', dim:'共情', reverse:false, t:'即使一个人做错了事，如果他有苦衷，我也很难彻底恨他。'},
+  {id:'Q14', m:'M4', dim:'共情', reverse:true,  t:'一旦有人伤害过我在意的人，我很难再对他心软。'},
+  {id:'Q15', m:'M4', dim:'共情', reverse:false, t:'我愿意为少数几个人破例，哪怕破坏自己定下的规则。'},
+  {id:'Q16', m:'M4', dim:'共情', reverse:true,  t:'我更能对“具体的人”共情，而不是对抽象的“大局”共情。'},
+
+  {id:'Q17', m:'M5', dim:'体面', reverse:false, t:'我很在意别人怎么看我，不希望被人看轻。'},
+  {id:'Q18', m:'M5', dim:'体面', reverse:true,  t:'只要里子拿到了，面子好不好看我不太在乎。'},
+  {id:'Q19', m:'M5', dim:'体面', reverse:false, t:'“该有的样子”对我很重要，我不喜欢失态。'},
+  {id:'Q20', m:'M5', dim:'体面', reverse:true,  t:'如果需要，我可以放下身段去做别人觉得“掉价”的事。'}
+];
+
+const DIM_NAMES = {
+  隐忍:'隐忍度',
+  反击:'反击烈度',
+  谋略:'谋略纵深',
+  共情:'共情半径',
+  体面:'体面执念'
+};
+
+const DIM_NOTES = {
+  隐忍:'高＝先收住、等时机；低＝当场回应、不忍。',
+  反击:'高＝一旦出手不留余地；低＝解决问题即可、留退路。',
+  谋略:'高＝提前布局、观察再动；低＝走一步看一步、信直觉。',
+  共情:'高＝容易为具体的人心软；低＝伤过我在意的人就很难翻篇。',
+  体面:'高＝在意看法、不愿失态；低＝里子优先、能放下身段。'
+};
+
+const WEIGHTS = {隐忍:1, 反击:1, 谋略:1, 共情:0.85, 体面:0.9};
+const MAX_DIST = Math.sqrt(Object.values(WEIGHTS).reduce((s,w)=>s + w*16, 0));
+
+const CHARACTERS = [
+  {
+    name:'魏娆（阿丑）',
+    tag:'隐忍是壳，反击是骨',
+    coord:{隐忍:4.6, 反击:4.3, 谋略:4.0, 共情:3.5, 体面:2.2},
+    portrait:'你不是没有脾气，是把脾气收在刀鞘里。被轻视、被踩到底层时，你不会当场炸，而是先记住、先活下去，等一个真正能还手的时刻。你的反击有明确的触发条件：不主动害人，但“人若犯我，我必犯人”。你经历过匮乏，所以对具体的人的苦有感知，但这份共情不会轻易给到伤害过你的人。体面对你来说不是刚需——里子比面子重要。',
+    strengths:['忍耐力极强，能在高压下保持清醒','反击精准，不做无效发泄','对少数在意的人有很深的忠诚'],
+    costs:['长期隐忍会消耗情绪','别人可能误判你“好欺负”直到你出手','容易把“活下去”放在“好好活”前面'],
+    advice:[
+      '在“等时机”的同时，给自己设一个情绪出口，不要把所有的账都压到最后一并结算。',
+      '不是每一次冒犯都值得你进入战斗状态；区分“需要回击”和“可以放过”。',
+      '允许自己在安全的人面前，不必一直做那个“扛得住”的人。'
+    ],
+    manual:'我不惹事，但不代表我怕事；你可以看轻我，但最好别让我等到还手的那天。',
+    guard:'君黛'
+  },
+  {
+    name:'君黛',
+    tag:'骄纵是盔甲，失控是软肋',
+    coord:{隐忍:1.4, 反击:4.8, 谋略:2.5, 共情:1.6, 体面:4.6},
+    portrait:'你的反应是即时的——被冒犯，立刻回击；被拒绝，立刻升级。你的攻击性不来自深仇大恨，更多来自“我本该被捧着”的预期被打破。你很在意自己看起来是否占上风，体面几乎是一种本能。你不太会提前布很远的局，因为你不习惯等。你的力量感很强，但它的燃料常常是“不能被看轻”的恐惧。',
+    strengths:['反应快，不内耗，当场就把情绪放出去','有强烈的自我主张，不容易被拿捏','在需要“镇场”的场合有天然的存在感'],
+    costs:['即时反击容易把小事升级成不可逆的冲突','对“被捧着”的预期一旦落空，容易走向极端','很少给别人留退路，也很少给自己留'],
+    advice:[
+      '在回击之前，给自己 24 小时。不是忍，是让反击更有选择。',
+      '区分“他不尊重我”和“他没有按我想要的方式尊重我”。',
+      '体面如果只能靠赢来维持，你会一直活得很累。试着在安全的关系里允许自己“不赢一次”。'
+    ],
+    manual:'我可以接受你不喜欢我，但我不能接受你轻视我。',
+    guard:'魏娆（阿丑）'
+  },
+  {
+    name:'陆濯',
+    tag:'沉静是力量，嘴硬是距离',
+    coord:{隐忍:4.2, 反击:3.3, 谋略:4.5, 共情:3.0, 体面:3.8},
+    portrait:'你不靠高声争辩来确立立场，而是靠观察、沉淀和长久的判断。被误解时，你不太会急着解释，更倾向先看清局势再行动。你有很强的原则感和责任心，但情感表达是收着的——嘴硬、慢热、不轻易让人看到软的那一面。你的谋略不是阴险，而是一种“先看清楚再出手”的生存习惯。',
+    strengths:['判断力强，不容易被情绪带着走','有原则、有担当，关键时候靠得住','沉得住气，能在混乱中保持清醒'],
+    costs:['太习惯自己扛，别人很难靠近','“不解释”会被误读为冷漠或默认','对体面的坚持有时会让你错过更直接的沟通'],
+    advice:[
+      '把“我自己处理”偶尔换成“我需要你听我说一下”，不会削弱你的能力。',
+      '在原则之外，给在意的人一个明确的信号：你不是不在乎，只是不擅长说。',
+      '观察是为了行动，不是为了永远停在观察里。'
+    ],
+    manual:'我不说，不代表我没看见；我只是习惯先看清楚，再决定怎么护住该护的人。',
+    guard:'君黛'
+  },
+  {
+    name:'谢画楼',
+    tag:'温婉是教养，傲骨是底线',
+    coord:{隐忍:3.6, 反击:2.4, 谋略:3.0, 共情:3.8, 体面:4.4},
+    portrait:'你被教养成一个体面、温婉、不轻易失态的人，但温婉不等于没有骨头。你很少主动攻击，也不屑于用阴私手段赢。你在意规矩、名声和“该有的样子”，被冒犯时更倾向用规则和体面的方式回应，而不是撕破脸。你的力量是“不低眉”的傲气——你可以退，但不会跪。',
+    strengths:['有教养、有分寸，让人信任','不主动害人，底线清楚','在混乱中仍然能保持体面和判断'],
+    costs:['太在意体面，可能咽下本可以说出口的不公','不擅长主动争取，容易把机会让出去','被真正伤害时，反击力度可能不够保护自己'],
+    advice:[
+      '体面不等于沉默；你可以用有分寸的方式，把该说的话说完。',
+      '在“该有的样子”之外，问自己一句：我真正想要的是什么？',
+      '傲骨不需要靠忍来证明，适度的主动争取不会让你变得“不好看”。'
+    ],
+    manual:'我可以不争，但不会低头；我的体面，不是给你踩的。',
+    guard:'君黛'
+  },
+  {
+    name:'红线',
+    tag:'通透是活法，沉默是武器',
+    coord:{隐忍:4.0, 反击:2.8, 谋略:3.8, 共情:4.6, 体面:2.0},
+    portrait:'你看起来安静、不争、容易被忽略，但你看得懂局势，也守得住底线。你不太在意排场和体面，更在意“护住想护的人”。你的共情半径很小但很深——对少数人掏心掏肺，对其他人保持距离。你不靠声量取胜，靠的是关键时刻做对选择。你的沉默不是软弱，是保存力量。',
+    strengths:['洞察力强，能看穿但不说穿','对在意的人极度忠诚','不贪慕虚荣，能在低处稳住自己'],
+    costs:['太安静，容易被低估甚至被牺牲','把太多东西藏在心里，别人不知道你需要什么','共情半径太小，可能错过值得信任的新关系'],
+    advice:[
+      '在关键的事上，让该听到的人听到你的声音；沉默是武器，但不能只用这一件武器。',
+      '你不需要对所有人设防，试着给一个新的人一次靠近的机会。',
+      '护住别人之前，先确认自己也在被护住的范围内。'
+    ],
+    manual:'我不争，是因为我知道什么值得争；我不说，是因为我在等该说的时候。',
+    guard:'魏姝'
+  },
+  {
+    name:'魏姝',
+    tag:'温婉是刀鞘，体面是牢笼',
+    coord:{隐忍:4.7, 反击:4.1, 谋略:4.8, 共情:1.8, 体面:4.7},
+    portrait:'你太擅长“看起来很好”了。表面上温婉得体、见谁都带三分笑，实际上每一步都算得很远，体面和权力对你来说是同一件事。你能忍很久，但忍不是为了放过，是为了在最有把握的时候一次性清算。共情对你来说是稀缺资源，你更相信规则、筹码和控制。你的强大是真的，但你的孤独也是真的。',
+    strengths:['谋略深，能在复杂局面里提前布局','情绪管理极强，不轻易暴露真实意图','执行力强，一旦决定就不拖泥带水'],
+    costs:['长期戴着“好人”的面具，很难有真正放松的关系','把体面当成目的，可能为了维持表象付出过大代价','共情半径太小，最终可能只剩自己在局里'],
+    advice:[
+      '在算计之外，留一个不需要你“表现很好”的人。',
+      '问自己一次：我想要的到底是赢，还是不再被轻视？这两个答案不一样。',
+      '体面如果必须靠控制所有人来维持，它迟早会反过来控制你。'
+    ],
+    manual:'我笑，不代表我信你；我退，不代表我认了。',
+    guard:'红线'
+  },
+  {
+    name:'郭虞凤',
+    tag:'不动声色，是最深的局',
+    coord:{隐忍:4.8, 反击:4.0, 谋略:4.6, 共情:2.2, 体面:4.3},
+    portrait:'你几乎不把情绪放在脸上。你擅长隐忍、审时度势，是那种“不动声色的布局者”——算计藏在日常闲谈里，出手之前别人几乎察觉不到。你的执念很深，一旦认定一件事，可以等很久。体面是你的外壳，也是你的工具。你不是没有温度，只是温度只留给极少数被你划进“自己人”范围的人。',
+    strengths:['极强的耐心和局势判断力','不轻易暴露底牌，难以被反制','对认定的事有持久的执行力'],
+    costs:['执念会消耗你，也可能把你困在过去','太习惯布局，很难信任“不设防”的关系','别人很难真正了解你，包括你想被了解的部分'],
+    advice:[
+      '执念和目标不一样：目标是往前走，执念是留在原地等一个交代。定期分辨你在追哪一个。',
+      '允许一件事“不需要赢”也能过去，不会削弱你的力量。',
+      '找一个你不需要布局的人，哪怕只有一个。'
+    ],
+    manual:'我不急，是因为我算得够远；但有些账，不一定非要算完才能放下。',
+    guard:'魏娆（阿丑）'
+  },
+  {
+    name:'乔氏（养母）',
+    tag:'生存优先，情分靠后',
+    coord:{隐忍:3.8, 反击:2.6, 谋略:3.2, 共情:2.4, 体面:2.3},
+    portrait:'你是现实主义者，活下来、让身边的人活下来，是你做判断的第一顺位。你不介意放下身段，也不执着于体面。你会在有限的资源里做最划算的选择，有时这些选择会让在意你的人感到被利用。你不是没有感情，只是你习惯把感情放在生存后面。你的韧性很强，但你的“划算”有时会伤害最亲近的人。',
+    strengths:['生存能力强，能在困境里找到出路','务实，不被面子和情绪绑架','对“活下去”有清醒的判断'],
+    costs:['“划算”优先可能让亲近的人感到被消耗','不擅长表达柔软，容易被理解成冷漠','长期把情分放在后面，关系会变薄'],
+    advice:[
+      '在计算“划算”之前，问一句：这个选择会不会让在意我的人心寒？',
+      '生存之外，留一点空间给“不划算但值得”的事。',
+      '你不需要变成另外一个人，但可以让你在意的人知道：情分不是不在，只是你习惯把它放后面。'
+    ],
+    manual:'我不是不心疼你，我只是先想怎么让大家都活下去。',
+    guard:'魏姝'
+  }
+];
+
+/* ================= 状态 ================= */
+let step = 0;
+let answers = {};
+let currentPhase = 'intro';
+let result = null;
+let generatedAt = null;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function storageAvailable(){
+  try{
+    const t = '__jc_test__';
+    localStorage.setItem(t, t);
+    localStorage.removeItem(t);
+    return true;
+  }catch(e){ return false; }
+}
+const HAS_STORAGE = storageAvailable();
+
+function saveState(){
+  if(!HAS_STORAGE) return;
+  try{
+    const consentEl = $('consent');
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      version: STORAGE_VERSION,
+      phase: currentPhase,
+      step: step,
+      answers: answers,
+      consent: consentEl ? consentEl.checked : false,
+      generatedAt: generatedAt,
+      savedAt: Date.now()
+    }));
+  }catch(e){}
+}
+
+function loadState(){
+  if(!HAS_STORAGE) return null;
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return null;
+    const s = JSON.parse(raw);
+    if(!s || s.version !== STORAGE_VERSION) return null;
+    return s;
+  }catch(e){ return null; }
+}
+
+function clearState(){
+  if(!HAS_STORAGE) return;
+  try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+}
+
+function updateAutosaveHint(){
+  const el = $('autosaveText'), box = $('autosaveHint');
+  if(!el || !box) return;
+  if(HAS_STORAGE){
+    el.textContent = '进度已自动保存在本浏览器，刷新不会丢失';
+    box.classList.remove('offline');
+  }else{
+    el.textContent = '当前浏览器不支持自动保存，请勿刷新页面';
+    box.classList.add('offline');
+  }
+}
+
+function restart(){
+  if(!confirm('确定要清除本次进度并重新开始吗？此操作不可撤销。')) return;
+  clearState();
+  location.reload();
+}
+window.restart = restart;
+
+$('startBtn').addEventListener('click', () => {
+  if(!$('consent').checked){
+    $('consentError').classList.remove('hidden');
+    return;
+  }
+  $('consentError').classList.add('hidden');
+  currentPhase = 'test';
+  $('intro').classList.add('hidden');
+  $('test').classList.remove('hidden');
+  step = 0;
+  saveState();
+  renderStep();
+});
+
+function renderStep(){
+  const mod = MODULES[step];
+  $('stepTag').textContent = `第 ${step+1} 部分 / 共 ${MODULES.length} 部分`;
+  $('moduleTitle').textContent = mod.title;
+  $('moduleHint').textContent = mod.hint;
+  $('formError').classList.add('hidden');
+
+  const qs = QUESTIONS.filter(q => q.m === mod.key);
+  $('questionForm').innerHTML = qs.map(renderQuestion).join('');
+
+  qs.forEach(q => {
+    const inputs = document.querySelectorAll(`input[name="${q.id}"]`);
+    const val = answers[q.id];
+    if(val){
+      inputs.forEach(inp => {
+        if(Number(inp.value) === Number(val)){
+          inp.checked = true;
+          inp.closest('.opt').classList.add('sel');
+        }
+      });
+    }
+    inputs.forEach(inp => {
+      inp.addEventListener('change', () => {
+        inputs.forEach(i => i.closest('.opt').classList.remove('sel'));
+        inp.closest('.opt').classList.add('sel');
+        answers[q.id] = Number(inp.value);
+        updateProgress();
+      });
+    });
+  });
+
+  $('prevBtn').style.visibility = step === 0 ? 'hidden' : 'visible';
+  $('nextBtn').classList.toggle('hidden', step === MODULES.length - 1);
+  $('submitBtn').classList.toggle('hidden', step !== MODULES.length - 1);
+  updateProgress();
+}
+
+function renderQuestion(q){
+  return `<div class="q" data-qid="${q.id}">
+    <div class="qtitle"><span class="qno">${q.id}</span>${esc(q.t)}</div>
+    <div class="scale">
+      ${SCALE_LABELS.map((lab,i)=>`
+        <label class="opt">
+          <input type="radio" name="${q.id}" value="${i+1}">
+          <span>${i+1}<br><span class="muted">${lab}</span></span>
+        </label>`).join('')}
+    </div>
+  </div>`;
+}
+
+function validateStep(){
+  const qs = QUESTIONS.filter(q => q.m === MODULES[step].key);
+  return qs.every(q => {
+    const a = answers[q.id];
+    return a !== undefined && a !== null && a !== '';
+  });
+}
+
+$('nextBtn').addEventListener('click', () => {
+  if(!validateStep()){
+    $('formError').classList.remove('hidden');
+    return;
+  }
+  step++;
+  saveState();
+  renderStep();
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+$('prevBtn').addEventListener('click', () => {
+  step = Math.max(0, step-1);
+  saveState();
+  renderStep();
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+$('submitBtn').addEventListener('click', () => {
+  if(!validateStep()){
+    $('formError').classList.remove('hidden');
+    return;
+  }
+  generatedAt = new Date().toISOString();
+  currentPhase = 'report';
+  saveState();
+  result = computeResult();
+  renderReport(result);
+  $('test').classList.add('hidden');
+  $('report').classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+function updateProgress(){
+  const answered = QUESTIONS.filter(q => {
+    const a = answers[q.id];
+    return a !== undefined && a !== null && a !== '';
+  }).length;
+  $('progressBar').style.width = Math.round(answered / QUESTIONS.length * 100) + '%';
+  $('progressText').textContent = `${answered} / ${QUESTIONS.length}`;
+  saveState();
+}
+
+function computeResult(){
+  const sums = {}, counts = {}, items = {};
+  QUESTIONS.forEach(q => {
+    const a = answers[q.id];
+    if(a === undefined || a === null) return;
+    let v = Number(a);
+    if(q.reverse) v = 6 - v;
+    sums[q.dim] = (sums[q.dim] || 0) + v;
+    counts[q.dim] = (counts[q.dim] || 0) + 1;
+    items[q.dim] = items[q.dim] || [];
+    items[q.dim].push(q.id);
+  });
+
+  const user = {};
+  Object.keys(DIM_NAMES).forEach(d => {
+    user[d] = counts[d] ? Math.round((sums[d] / counts[d]) * 10) / 10 : 3;
+  });
+
+  const ranked = CHARACTERS.map(c => {
+    let sq = 0;
+    Object.keys(WEIGHTS).forEach(d => {
+      const diff = user[d] - c.coord[d];
+      sq += WEIGHTS[d] * diff * diff;
+    });
+    const dist = Math.sqrt(sq);
+    const match = Math.max(40, Math.min(96, Math.round(100 - (dist / MAX_DIST) * 62)));
+    return {character:c, dist, match};
+  }).sort((a,b) => b.match - a.match);
+
+  return {user, items, ranked, top:ranked[0], second:ranked[1], farthest:ranked[ranked.length-1]};
+}
+
+function dimBar(dim, userVal, charVal){
+  const pct = Math.round(userVal / 5 * 100);
+  return `<div class="metric">
+    <div class="metricTop">
+      <span><strong>${DIM_NAMES[dim]}</strong></span>
+      <span>你 ${userVal} / 参考 ${charVal}</span>
+    </div>
+    <div class="bar gold"><div style="width:${pct}%"></div></div>
+    <div class="muted" style="font-size:12.5px;margin-top:4px">${DIM_NOTES[dim]}</div>
+    <div class="muted" style="font-size:12.5px">依据题号：${(result.items[dim] || []).join('、')}</div>
+  </div>`;
+}
+
+function renderReport(r){
+  const c = r.top.character;
+  const dateStr = new Date(generatedAt).toLocaleDateString('zh-CN');
+  const dims = Object.keys(DIM_NAMES);
+
+  $('report').innerHTML = `
+    <div class="card">
+      <div class="row noPrint" style="justify-content:space-between">
+        <div>
+          <span class="tag">《嫁金钗》角色报告</span>
+          <span class="tag gold">${dateStr}</span>
+        </div>
+        <div>
+          <button class="btn secondary" onclick="window.print()">打印 / 保存 PDF</button>
+          <button class="btn ghost" onclick="restart()">重新测试</button>
+        </div>
+      </div>
+
+      <h1>你在《嫁金钗》里，最像谁？</h1>
+      <p class="muted">本报告基于你的自评答案自动生成，用于剧迷向自我探索，不是心理诊断，也不评判角色善恶。</p>
+
+      <div class="hero">
+        <div class="muted" style="font-size:13px">最接近你的角色</div>
+        <div class="heroName">${esc(c.name)} <span class="scorePill">契合度 ${r.top.match}</span></div>
+        <div class="heroTag">${esc(c.tag)}</div>
+        <div class="muted" style="margin-top:8px;font-size:13px">次接近：${esc(r.second.character.name)}（${r.second.match}）· 差异最大：${esc(r.farthest.character.name)}</div>
+      </div>
+
+      <h2>一、你的生存策略画像</h2>
+      <p>${esc(c.portrait)}</p>
+
+      <h2>二、五维对照：你 vs 这一角色的典型状态</h2>
+      <p class="muted">分数为 1–5 的相对强度，不是人群百分位。差值越大，说明你在这个维度上比该角色的典型状态更偏一端。</p>
+      ${dims.map(d => dimBar(d, r.user[d], c.coord[d])).join('')}
+
+      <h2>三、这份策略在现实中的优势</h2>
+      <ul class="list">${c.strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+
+      <h2>四、你可能付出的代价</h2>
+      <p class="muted">下面写的不是“缺点”，而是这种生存策略在现实关系和工作里可能产生的成本。看见成本，才有调整的空间。</p>
+      <div class="callout warn">
+        <ul class="list">${c.costs.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+      </div>
+
+      <h2>五、给你的 3 条建议</h2>
+      <p class="muted">方向是“多一个选择”，不是“改掉自己”。你不需要变成另一个角色，只需要在关键处多一条路。</p>
+      <ol class="advice">${c.advice.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
+
+      <div class="quote">
+        <strong>如果要用一句剧中人的方式提醒自己：</strong><br>
+        “${esc(c.manual)}”
+      </div>
+
+      <h2>六、你最需要警惕的角色类型</h2>
+      <div class="twoCol">
+        <div class="miniCard">
+          <h4>${esc(c.guard)}型</h4>
+          <p class="muted" style="margin:6px 0">你和这一类型在关键维度上最容易形成消耗性互动：你的优势在 TA 那里可能不被接住，TA 的方式也可能精准踩到你的代价区。</p>
+          <p class="muted" style="margin:6px 0">不是让你远离这类人，而是提醒你：和 TA 相处时，先把规则和底线说清楚，比靠默契更有效。</p>
+        </div>
+        <div class="miniCard">
+          <h4>怎么减少磨损</h4>
+          <ul class="list" style="margin:6px 0;padding-left:18px">
+            <li>先说你想要的结果，再说你的感受。</li>
+            <li>在第一次越界时就给出明确信号，不要等到积累到爆发。</li>
+            <li>差异不是谁对谁错，只是两套生存策略撞在了一起。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>七、方法与局限</h2>
+      <ul class="list">
+        <li><strong>方法：</strong>20 道自评题覆盖隐忍度、反击烈度、谋略纵深、共情半径、体面执念五个维度；将你的维度得分与 8 位角色的参考坐标做加权距离计算，距离最近者即为匹配类型，并换算为 40–96 的契合度区间。</li>
+        <li><strong>局限：</strong>本测试为规则化自动结果，未使用人群常模与信效度检验；结果受作答时的情绪状态和自我认知影响。角色类型是基于剧中公开设定与行为逻辑做的维度抽象，<strong>不是对角色善恶的最终评判，也不是对演员本人的任何评价</strong>。</li>
+        <li><strong>边界：</strong>不构成心理诊断或医疗建议；不用于评判任何真实关系的好坏。</li>
+        <li><strong>隐私：</strong>答案仅保存在你本机浏览器，不上传服务器。</li>
+      </ul>
+
+      <p class="muted printOnly" style="font-size:12px;margin-top:18px">《嫁金钗》角色人格测试 · 生成日期 ${dateStr} · 非官方衍生内容，仅供剧迷自我探索</p>
+    </div>
+  `;
+}
+
+function restoreState(s){
+  answers = s.answers || {};
+  step = s.step || 0;
+  currentPhase = s.phase;
+  generatedAt = s.generatedAt || null;
+  if(s.consent){
+    const el = $('consent');
+    if(el) el.checked = true;
+  }
+  if(s.phase === 'report'){
+    result = computeResult();
+    renderReport(result);
+    $('intro').classList.add('hidden');
+    $('test').classList.add('hidden');
+    $('report').classList.remove('hidden');
+  }else if(s.phase === 'test'){
+    $('intro').classList.add('hidden');
+    $('test').classList.remove('hidden');
+    renderStep();
+    const el = $('restoreNotice');
+    el.innerHTML = `<div><strong>已恢复上次进度</strong><div class="small">保存时间：${new Date(s.savedAt).toLocaleString('zh-CN')}。如需从头开始，请点击【清除进度】。</div></div>`;
+    el.classList.remove('hidden');
+  }
+}
+
+(function boot(){
+  updateAutosaveHint();
+  const saved = loadState();
+  if(!saved) return;
+  if((saved.phase === 'test' || saved.phase === 'report') && saved.answers && Object.keys(saved.answers).length > 0){
+    restoreState(saved);
+  }
+})();
+</script>
+</body>
+</html>
